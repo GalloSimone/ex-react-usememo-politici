@@ -1,6 +1,7 @@
 import React,{ useState,useEffect } from 'react'
 
 import './App.css'
+import PoliticianCard from './components/PoliticianCard';
 
 function App() {
   const [politicians, setPoliticians] = useState([])
@@ -28,13 +29,7 @@ const [searchTerm, setSearchTerm]=useState("")
       />
       <ul>
         {filteredPoliticians.map((politician)=>(
-          <li key={politician.id}>
-           <p>nome:{politician.name}</p>
-           <p>immagine:{politician.image}</p>
-           <p>posizione:{politician.position}</p>
-           <p>biografia:{politician.biography}</p>
-
-          </li>
+          <PoliticianCard key={politician.id} politician={politician}/>
         ))}
       </ul>
      </div>
